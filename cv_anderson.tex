@@ -24,8 +24,9 @@
 \def\myname{Anderson Konzen}
 \def\myemail{anderson.konzen@gmail.com}
 \def\myskype{andersonkonzen}
-\def\mycellphone{+55 51 9196 0949}
-\def\myaddress{Av. Cauduro, 57/301\\Porto Alegre, \textsc{rs} - 90035-030\\Brazil}
+\def\mycellphone{+1 (604) 727-9634}
+\def\mylinkedin{http://ca.linkedin.com/in/andersonkonzen}
+\def\myaddress{142 E. 42nd Avenue\\Vancouver \textsc{bc} \ V5W 1S6}
 
 
 %% Loads the fontspec package, so we can easily select system fonts
@@ -43,7 +44,7 @@
 \geometry{a4paper,         %% Specifies the paper size
   textwidth=5.5in,         %% Specifies the width of body (the text area)
   textheight=9.0in,        %% Specifies the height of body (the text area)
-  marginparsep=7pt,        %% Modifies separation between body and marginal notes
+  marginparsep=9pt,        %% Modifies separation between body and marginal notes
   marginparwidth=.6in}     %% Modifies width of the marginal notes
 \setlength\parindent{0in}  %% Amount of indentation at the first line of a paragraph.
 
@@ -57,7 +58,10 @@
 %-----------------------------------------------------------------------
 % Custom Commands
 %-----------------------------------------------------------------------
-\chardef\&="E050  % Redefine '&' character
+% Custom ampersand - use like this: \amper{}
+%\newcommand{\amper}{{\fontspec[Scale=.95]{Linux Libertine O}\selectfont\itshape\&}}
+% Or redefine '&' character
+\chardef\&="E050
 \newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
 \newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
 \newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
@@ -99,13 +103,17 @@
 %-----------------------------------------------------------------------
 % DOCUMENT
 %-----------------------------------------------------------------------
+% Avoid hyphenation of the words in the following list:
+\hyphenation{Laserjet}
+
 \begin{document}
 {\LARGE \myname}\\
 \hrule
 \vspace{0.2in}
 {\large phone: \mycellphone}\\[.05cm]
 {\large email: \href{mailto:\myemail}{\texttt{\myemail}}}\\[.05cm]
-{\large skype: \myskype}\\[.2cm]
+{\large \href{\mylinkedin}{\mylinkedin}\\[.2cm]
+%{\large skype: \myskype}\\[.2cm]
 \myaddress
 %\vfill
 \vspace{0.5in}
@@ -115,33 +123,37 @@
 
 \subsection*{Hewlett-Packard | {\footnotesize{porto alegre, rs, brazil}}}
 
-\years{2010- \ldots}Software Engineer\\
-Design and development of embedded software solution for a new product family of Network Scanners, Single Function Printers and MFPs of HP. The development is focused on the UI layer, using C\#, .NET and .NET Compact frameworks; HTML5 and WebServices.\\
-Due to the geographical distribution of the teams, I work with colleagues from the U.S. and India on a daily basis.
+\years{2010-2012}Software Engineer\\
+Design and development of embedded software solution for a new familiy of Laserjet enterprise products - network scanners, single and multi function printers.
+\begin{itemize}
+\item Developed, maintained and tested code for the UI layer (control panel), including new features, customer escalation and bug fixing.
+\item Development with .NET technologies: C\#, .NET 3.5 and Compact Framework (embedded environment); HTML5 and WebServices.
+\item Program/project with large-scale agile development principles: scrum meetings, continuous integration, automated tests (unit and system).
+\item Rigorous version control using git - one codebase for all products.
+\item High interaction with multidisciplinary teams - Human Factors Engineers and System Engineers - to define and plan new features.
+\item Due to the geographical distribution of the teams, worked with colleagues from the U.S. and India on a daily basis.
+\end{itemize}
 
 \subsection*{Actia do Brasil | {\footnotesize{porto alegre, rs, brazil}}}
 
-\years{2007-2010}Project Coordinator\\
-During this time I worked as a coordinator for the projects of the Automotive Diagnostic BU, where I could improve my management skills.
+\years{2007-2010}Technical Leader
+%Development of software and systems for the company's automotive diagnostic business unit.
 \begin{itemize}
-\item[-] Coordination of distributed teams engaged in software development for the company's automotive diagnostic business unit.
-\item[-] Worked as a developer in critical situations, helping with development, training and application of best practices of software engineering.
-\item[-] Mapping development process within the scope of the business unit.
-\item[-] Constant contact with teams of other subsidiaries to cooperate with development, mainly located in France and Germany.
+\item Planned, developed and tested a new web-based automotive diagnostic system for Fiat do Brazil. Server side was developed with Java/JBoss/Oracle DB (OS agnostic) and client-side with C++/wxWidgets (Windows).
+\item Interacted with teams of other subsidiaries, located in France and Germany, for development and integration of systems.
 \end{itemize}
 
-\years{2005-2007}Software Developer\\
-Development of automotive diagnostic systems:
+\emph{Achievements}\\
+%\begin{itemize}
+Delivered a new web-based automotive diagnostic system for Fiat do Brasil, improving quality of service, rate of resolved tickets and customer satisfaction. More than 400 official Fiat dealers in Brazil use the new system, which became a reference inside the Fiat Group. The same system also became a reference for the Actia Group, being forked and used in other projects of the group.\\
+%\end{itemize}
+
+\years{2005-2007}Software Engineer
 \begin{itemize}
-\item[-] A web-based system was developed for Fiat do Brasil to allow FIAT engineers to remotely diagnose and repair electronic control units. The client side is a windows desktop application developed in C++/Visual C++ and the server side was developed in Java/JSP/Oracle/JBoss.
-\item[-] Development and updates for the VCI (vehicle communication interface) firmware.
-\item[-] C/C++/XML programming to add, update and fix protocols in Actia's solution for automotive diagnostics.
-\item[-] Experience in automotive communication protocols.
-\end{itemize}
-Other projects included:
-\begin{itemize}
-\item[-] Development of digital video capture system for automotive surveillance using embedded Linux.
-\item[-] Creation and support of installers for several Actia products using NSIS.
+\item Developed, debbuged, tested and maintained automotive diagnostic systems (EDI NG for Fiat do Brazil and Actia Multi-Diag) using mainly C/C++/XML programming.
+\item Maintained and bug fixed firmware for VCI (vehicle communication interface). Large usage of C and automotive communication protocols.
+\item Developed, debbuged and maintained a digital video capture system for automotive surveillance using C and embedded Linux (hardware) and Borland C++/Microsoft DirectX (media player).
+\item Experience with automotive communication protocols (CAN, Keyword Protocol 2000, ISO 9141).
 \end{itemize}
 
 \subsection*{W3Haus | {\footnotesize{porto alegre, rs, brazil}}}
