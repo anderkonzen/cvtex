@@ -37,3 +37,4 @@ Just search for these packages in CTAN for instructions or download. If you use 
  - sectsty
  - ulem
  - hyperref
+ - oberdiek (bookmark)
