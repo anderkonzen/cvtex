@@ -1,26 +1,26 @@
-%-----------------------------------------------------------------------
-% Anderson Konzen (anderson.konzen at gmail)
-% Template of a CV typeset in XeTeX
-% 
-% URL: https://github.com/anderkonzen/xetexcv
-% DISCLAIMER: This template is provided for free and without any
-%             guarantee that it will correctly compile on your
-%             system if you have a non-standard configuration.
-%
-% This work is a fork from https://github.com/dartar/cvtex. This
-% modified version is licensed under the same Creative Commons
-% Attribution-ShareAlike license:
-% http://creativecommons.org/licenses/by-sa/3.0/.
-%
-% (Please, keep a link to https://github.com/anderkonzen/xetexcv on
-% your source file for attribution as per CC-license.)
-%-----------------------------------------------------------------------
+%%------------------------------------------------------------------------------
+%% Anderson Konzen (anderson.konzen@gmail.com)
+%% Template of a résumé typeset in XeTeX
+%% https://github.com/anderkonzen/cvtex
+%%
+%% DISCLAIMER: This template is provided for free and without any guarantee that
+%%             it will correctly compile on your system if you have a
+%%             non-standard configuration.
+%%
+%% This work is a fork from https://github.com/dartar/cvtex. This modified
+%% version is licensed under the same Creative Commons Attribution-ShareAlike
+%% license: http://creativecommons.org/licenses/by-sa/3.0/.
+%%
+%% (Please, keep a link to https://github.com/anderkonzen/cvtex on your source
+%% file for attribution as per CC-license.)
+%%------------------------------------------------------------------------------
 
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+%!TEX encoding = UTF-8
 
 \documentclass[10pt,a4paper]{article}
 
+%% Some definitions
 \def\myname{Anderson Konzen}
 \def\myemail{anderson.konzen@gmail.com}
 \def\myskype{andersonkonzen}
@@ -28,85 +28,102 @@
 \def\mylinkedin{http://ca.linkedin.com/in/andersonkonzen}
 \def\myaddress{142 E. 42nd Avenue\\Vancouver \textsc{bc} \ V5W 1S6}
 
+\def\mykeywords{Konzen, Anderson, Anderson Konzen, Vita, CV, Resume, XeLaTeX}
+\def\mycopyright{\myname}
 
 %% Loads the fontspec package, so we can easily select system fonts
 %\usepackage{fontspec}
-%% It implements some odds-and-ends features and improved functionality for broken or sub-standard LaTeX methods when using the XeTeX format. Already loads the fontspec package.
+
+%% xltxtra implements some odds-and-ends features and improved functionality for
+%% broken or sub-standard LaTeX methods when using the XeTeX format. Already 
+%% loads the fontspec package.
 \usepackage{xltxtra}
+
 %% Loads xcolor package, so we can use color names instead of rgb values
 \usepackage{xcolor}
 
-%-----------------------------------------------------------------------
-% Document Layout
-%-----------------------------------------------------------------------
+%%------------------------------------------------------------------------------
+%% Document Layout
+%%------------------------------------------------------------------------------
 %% Loads geometry package, so we can easily change page setup
 \usepackage{geometry}
-\geometry{a4paper,         %% Specifies the paper size
-  textwidth=5.5in,         %% Specifies the width of body (the text area)
-  textheight=9.0in,        %% Specifies the height of body (the text area)
-  marginparsep=9pt,        %% Modifies separation between body and marginal notes
-  marginparwidth=.6in}     %% Modifies width of the marginal notes
-\setlength\parindent{0in}  %% Amount of indentation at the first line of a paragraph.
+\geometry{a4paper,        % Specifies the paper size
+  textwidth=5.5in,        % Specifies the width of body (the text area)
+  textheight=9.0in,       % Specifies the height of body (the text area)
+  marginparsep=11pt,      % Modifies separation between body and marginal notes
+  marginparwidth=.6in}    % Modifies width of the marginal notes
+\setlength\parindent{0in} % Amount of indentation at the first line of a 
+                          % paragraph.
 
-%-----------------------------------------------------------------------
-% Fonts
-%-----------------------------------------------------------------------
+%%------------------------------------------------------------------------------
+%% Fonts
+%%------------------------------------------------------------------------------
 \setmainfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Linux Libertine O}
 \setsansfont[Mapping={tex-text},Color=AA0000]{Linux Biolinum O}
-\setmonofont[Mapping={tex-text},Scale=0.8]{Inconsolata}
+\setmonofont[Mapping={tex-text},Scale=0.9]{Inconsolata}
 
-%-----------------------------------------------------------------------
-% Custom Commands
-%-----------------------------------------------------------------------
-% Custom ampersand - use like this: \amper{}
+%%------------------------------------------------------------------------------
+%% Custom Commands
+%%------------------------------------------------------------------------------
+%% Custom ampersand - use like this: \amper{}
 %\newcommand{\amper}{{\fontspec[Scale=.95]{Linux Libertine O}\selectfont\itshape\&}}
-% Or redefine '&' character
+%% Or redefine '&' character
 \chardef\&="E050
 \newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
 \newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
 \newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
 %% Configure margin years
 \usepackage{marginnote}
-\newcommand{\years}[1]{\marginnote{#1}}
-\renewcommand*{\raggedleftmarginnote}{}  %% Define margin note alignment (in this case, justified text at the left margin)
-%\setlength{\marginparsep}{7pt}  %% Already defined in geometry
-\reversemarginpar  %% Margin notes in left side of the page
+\newcommand{\years}[1]{\marginnote{{\small #1}}}
+%% Define margin note alignment (here, justified text at the left margin)
+\renewcommand*{\raggedleftmarginnote}{}
 
-%-----------------------------------------------------------------------
-% Headings
-%-----------------------------------------------------------------------
-%% Provides a set of commands for changing the font used for the various sectional headings
+%% Margin notes in left side of the page
+\reversemarginpar
+
+%%------------------------------------------------------------------------------
+%% Headings
+%%------------------------------------------------------------------------------
+%% sectsty provides a set of commands for changing the font used for the various
+%% sectional headings
 \usepackage{sectsty}
-%% Provides various types of underlining that can stretch between words and be broken across lines
+%% ulem provides various types of underlining that can stretch between words and
+%% be broken across lines
 \usepackage[
-  normalem  %% \em and \emph still produce normal italics
+  normalem  % \em and \emph still produce normal italics
 ]{ulem}
 %% Change font size of section headers
 \sectionfont{\color[HTML]{AA0000}\mdseries\upshape\Large}
 \subsectionfont{\mdseries\scshape\normalsize} 
 \subsubsectionfont{\mdseries\upshape\large} 
 
-%-----------------------------------------------------------------------
-% PDF Setup
-%-----------------------------------------------------------------------
+%%------------------------------------------------------------------------------
+%% PDF Setup
+%%------------------------------------------------------------------------------
 \usepackage[
-  xetex,            %% Use XeTeX backend
-  colorlinks=true,  %% Colors the text of links and anchors
-  breaklinks=true,  %% Allow links to break over lines
-  pdftitle={{\myname} - Curriculum Vitae},
-  pdfauthor={\myname}
+  xetex,            % Use XeTeX backend
+  colorlinks=true,  % Colors the text of links and anchors
+  breaklinks=true,  % Allow links to break over lines
+  pdftitle={{\myname} - Résumé},
+  pdfauthor={\myname},
+  pdfkeywords={\mykeywords}
 ]{hyperref}  
 \hypersetup{linkcolor=blue,filecolor=black,urlcolor=blue}
 
 
-%-----------------------------------------------------------------------
-%-----------------------------------------------------------------------
-% DOCUMENT
-%-----------------------------------------------------------------------
-% Avoid hyphenation of the words in the following list:
-\hyphenation{Laserjet}
+%%------------------------------------------------------------------------------
+%% DOCUMENT
+%%------------------------------------------------------------------------------
+
+%% Avoid hyphenation of the words in the following list:
+\hyphenation{Laserjet FutureSmart WebServices PostgreSQL SQLServer ACTIA
+wxWidgets Windows Linux}
+
+%% To create a professional lookgin table int  the Expertise section
+\usepackage{booktabs}
 
 \begin{document}
+
 {\LARGE \myname}\\
 \hrule
 \vspace{0.2in}
@@ -114,68 +131,102 @@
 {\large email: \href{mailto:\myemail}{\texttt{\myemail}}}\\[.05cm]
 {\large \href{\mylinkedin}{\mylinkedin}\\[.2cm]
 %{\large skype: \myskype}\\[.2cm]
-\myaddress
+%\myaddress
 %\vfill
-\vspace{0.5in}
+\vspace{2.0in}
+
+\textit{Software Engineer with over 7 years of experience in both design and programming, I have already worked on several areas - from building websites to automotive systems, embedded systems to desktop applications. What I most like on all the opportunities I had is that I can always work with new technologies and new people.}
+
+\section*{Expertise}
+\begin{itemize}
+  \item Programming: C, C++, C\#, Python
+  \item Version control: git, Subversion
+  \item Communication skill with multidisciplinary teams
+  \item Followership and organizational diplomacy
+  \item Automotive communication protocols and vehicle diagnostics
+\end{itemize}
+\vspace{0.1in}
+\begin{center}
+  \begin{tabular}{p{9cm}c}
+  \toprule
+  C/C++ STL, MS Visual Studio 6/2003/2005/2008/2010, Windows, Linux & 5 years \\
+  \midrule
+  C\#, .NET Framework, Bugzilla, HP Quality Center, Eclipse IDE, XML, NSIS (Nullsoft Scriptable Install System), Vector CANalyser & 3 years \\
+  \midrule
+  .NET Compact Framework, Subversion, git, JavaServer Pages, PHP, ASP, VMWare, Java SE, Python, PostgreSQL, SQLServer & 2 years \\
+  \midrule
+  JBoss, Oracle DB, MySQL & 1 year \\
+  \bottomrule
+  \end{tabular}
+\end{center}
 
 %\hrule
 \section*{Professional Experience}
 
 \subsection*{Hewlett-Packard | {\footnotesize{porto alegre, rs, brazil}}}
+{\footnotesize\textit{The world’s largest technology company, HP brings together a portfolio that spans printing, personal computing, software, services and IT infrastructure at the convergence of the cloud and connectivity, creating seamless, secure, context-aware experiences for a connected world.}}
+\medskip
 
-\years{2010-2012}Software Engineer\\
-Design and development of embedded software solution for a new familiy of Laserjet enterprise products - network scanners, single and multi function printers.
+\years{Jul 2010 -\\Feb 2012}Software Engineer\\
+As a software engineer, worked on the design and development of embedded software solutions for a new family of Laserjet enterprise products – network scanners, single and multi function printers. The HP FutureSmart, as this set of solutions is called, is a firmware developed with the intention to simplify management, unify test across fleet of devices, enhance security features and reduce customer support costs.
 \begin{itemize}
-\item Developed, maintained and tested code for the UI layer (control panel), including new features, customer escalation and bug fixing.
-\item Development with .NET technologies (C\#, .NET 3.5 and Compact Framework); HTML5 and WebServices.
-\item Program/project with large-scale agile development principles: scrum meetings, continuous integration, automated tests (unit and system).
-\item Rigorous version control using git - one codebase for all products.
-\item High interaction with multidisciplinary teams - Human Factors Engineers and System Engineers - to define and plan new features.
-\item Due to the geographical distribution of the teams, worked with colleagues from the U.S. and India on a daily basis.
+  \item Developed, maintained and tested code for the UI layer (control panel), including new features and bug fixing.
+  \item Development with .NET technologies (C\#, .NET 3.5 and Compact Framework); HTML5 and WebServices.
+  \item Program/project with large-scale agile development principles: Scrum meetings, continuous integration, automated tests (unit and system).
+  \item Rigorous version control using git - one codebase for all products.
+  \item High interaction with multidisciplinary teams - Human Factors Engineers and System Engineers - to define and plan new features.
+  \item Due to the geographical distribution of the teams, worked with colleagues from the U.S. and India on a daily basis.
 \end{itemize}
+\emph{Achievements}\\
+Delivered important features for the firmware - UI/control panel, including escalations from major HP customers.
 
 \subsection*{Actia do Brasil | {\footnotesize{porto alegre, rs, brazil}}}
+{\footnotesize\textit{ACTIA Group is a major player in two principal areas of expertise: electronic diagnostics and garage equipment for repairing and testing vehicles, and on-board systems for commercial, industrial, agricultural and military vehicles. ACTIA's expertise spans from designing products to supporting and servicing them in the field. Innovation is backed by 15\% of the turnover invested in Research \& Development, and by the performance of almost 400 engineers in design centres of excellence throughout the world.}}
+\medskip
 
-\years{2007-2010}Technical Leader
-%Development of software and systems for the company's automotive diagnostic business unit.
+\years{Apr 2007 -\\ Jul 2010}Technical Leader\\
+As a technical leader, was responsible for two projects/products of the Diagnostic Business Unit.
 \begin{itemize}
-\item Planned, developed and tested a new web-based automotive diagnostic system for Fiat do Brazil. Server side was developed with Java/JBoss/Oracle DB (OS agnostic) and client-side with C++/wxWidgets (Windows).
-\item Interacted with teams of other subsidiaries, located in France and Germany, for development and integration of systems.
+  \item Planned, developed and tested a new web-based automotive diagnostic system for Fiat do Brasil. Server side was developed with Java/JBoss/Oracle DB (OS agnostic) and client-side with C++/wxWidgets (Windows).
+  \item Technically coordinated a team of 6 developers, distributed among the projects of the business unit.
+  \item Interacted with teams of other subsidiaries, located in France and Germany, for development and integration of systems.
 \end{itemize}
-
 \emph{Achievements}\\
-%\begin{itemize}
-Delivered a new web-based automotive diagnostic system for Fiat do Brasil, improving quality of service, rate of resolved tickets and customer satisfaction. More than 400 official Fiat dealers in Brazil use the new system, which became a reference inside the Fiat Group. The same system also became a reference for the Actia Group, being forked and used in other projects of the group.\\
-%\end{itemize}
+Delivered a new web-based automotive diagnostic system for Fiat do Brasil, improving quality of service, rate of resolved tickets and customer satisfaction. More than 400 official Fiat dealers in Brazil use the new system, which became a reference inside the Fiat Group. The same system also became a reference for the Actia Group, being adapted and used in other projects.\\
 
-\years{2005-2007}Software Engineer
+\years{Feb 2005 -\\ Apr 2007}Software Engineer\\
+As a software engineer, worked on the development team of several projects of the Diagnostic Business Unit.
 \begin{itemize}
-\item Developed, debbuged, tested and maintained automotive diagnostic systems (EDI NG for Fiat do Brazil and Actia Multi-Diag) using mainly C/C++/XML programming.
-\item Maintained and bug fixed firmware for VCI (vehicle communication interface). Large usage of C and automotive communication protocols.
-\item Developed, debbuged and maintained a digital video capture system for automotive surveillance using C and embedded Linux (hardware) and Borland C++/Microsoft DirectX (media player).
-\item Experience with automotive communication protocols (CAN, Keyword Protocol 2000, ISO 9141).
+  \item Developed, debugged, tested and maintained automotive diagnostic systems (EDI NG for Fiat do Brasil and Actia Multi-Diag) using mainly C/C++/XML programming.
+  \item Maintained and bug fixed firmware for VCI (vehicle communication interface). Large usage of C and automotive communication protocols.
+  \item Developed, debugged and maintained a digital video capture system for automotive surveillance using C and embedded Linux (hardware) and Borland C++/Microsoft DirectX (media player).
+  \item Experience with automotive communication protocols (CAN, Keyword Protocol 2000, ISO 9141).
 \end{itemize}
+\emph{Achievements}\\
+Delivered several updates for Fiat's diagnostic system to broaden the diagnostic coverage to new vehicle models. These updates were deployed to the entire dealer network of Fiat do Brasil.
 
 \subsection*{W3Haus | {\footnotesize{porto alegre, rs, brazil}}}
+{\footnotesize\textit{W3Haus is a communication agency that creates campaigns for brands using the most innovative and current digital mediums. Between its clients are Petrobras, Kraft Foods and VH1.}}
+\medskip
 
-\years{2003-2005}Web Developer\\
+\years{Sep 2003 -\\ Jan 2005}Web Developer\\
 Development of websites and intranet systems mainly using PHP/ASP/C\# and PostgreSQL/SQLServer.
 
 %\hrule
 \section*{Education}
 
-\years{2010-\ldots}\textsc{MSc} in Electrical Engineering at Pontifícia Universidade Católica do Rio Grande do Sul - \textsc{pucrs}, Porto Alegre, \textsc{rs}, Brazil\\
-{\em{Currently blocked.}}\\
-\years{2006-2007}\textsc{MBA} in Business Administration at Fundação Getúlio Vargas - \textsc{fgv}, Porto Alegre, \textsc{rs}, Brazil\\
-\years{1999-2003}\textsc{B.Eng} in Computer Engineering at Universidade Federal do Rio Grande do Sul - \textsc{ufrgs}, Porto Alegre, \textsc{rs}, Brazil
+\years{2010 - \ldots}\textsc{M.Sc.} in Electrical Engineering at Pontifical Catholic University of Rio Grande do Sul - \textsc{pucrs}, Porto Alegre, \textsc{rs}, Brazil\\
+{\em{In Progress.}}\\
+\years{2006 - 2007}Postgraduate Certificate \textsc{(PGCert)} in Business Administration at Fundação Getúlio Vargas - \textsc{fgv}, Porto Alegre, \textsc{rs}, Brazil\\
+\years{1999 - 2004}\textsc{B.Sc.} in Computer Engineering at Federal University of Rio Grande do Sul - \textsc{ufrgs}, Porto Alegre, \textsc{rs}, Brazil
 
 %\hrule
 \section*{Languages}
 
 \begin{itemize}
-\item Portuguese (Native language)
-\item English (Professional working proficiency)
-\item French (Elementary proficiency)
+  \item Portuguese (Native language)
+  \item English (Professional working proficiency)
+  \item French (Elementary proficiency)
 \end{itemize}
 
 %\hrule
@@ -188,11 +239,12 @@ Available upon request.
 %\hrulefill
 
 \begin{center}
-{\scriptsize  Last updated: \today\- $\bullet$\- 
+{\scriptsize Last updated: \today \- $\bullet$\- 
 % ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
-Typeset in \href{http://nitens.org/taraborelli/cvtex}{\XeTeX}\\
+Typeset in \href{http://nitens.org/taraborelli/cvtex}{\XeTeX}%\\
 % ---- FILL IN THE FULL URL TO YOUR CV HERE
-\href{https://github.com/anderkonzen/cvtex}{https://github.com/anderkonzen/cvtex}}
+%\href{https://github.com/anderkonzen/cvtex}{https://github.com/anderkonzen/cvtex}
+}
 \end{center}
 
 \end{document}
