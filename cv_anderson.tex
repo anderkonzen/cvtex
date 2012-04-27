@@ -110,6 +110,13 @@
 ]{hyperref}  
 \hypersetup{linkcolor=blue,filecolor=black,urlcolor=blue}
 
+%% bookmark idea taken from https://github.com/johncolby/cvtex
+\usepackage{bookmark} % Better bookmark support
+%% Section headings have no numbers, but still generate bookmarks
+\makeatletter
+\renewcommand\@seccntformat[1]{}
+\makeatother
+
 
 %%------------------------------------------------------------------------------
 %% DOCUMENT
@@ -137,7 +144,7 @@ wxWidgets Windows Linux}
 
 \textit{Software Engineer with over 7 years of experience in both design and programming, I have already worked on several areas - from building websites to automotive systems, embedded systems to desktop applications. What I most like on all the opportunities I had is that I can always work with new technologies and new people.}
 
-\section*{Expertise}
+\section{Expertise}
 \begin{itemize}
   \item Programming: C, C++, C\#, Python
   \item Version control: git, Subversion
@@ -161,9 +168,9 @@ wxWidgets Windows Linux}
 \end{center}
 
 %\hrule
-\section*{Professional Experience}
+\section{Professional Experience}
 
-\subsection*{Hewlett-Packard | {\footnotesize{porto alegre, rs, brazil}}}
+\subsection{Hewlett-Packard | {\footnotesize{porto alegre, rs, brazil}}}
 {\footnotesize\textit{The world’s largest technology company, HP brings together a portfolio that spans printing, personal computing, software, services and IT infrastructure at the convergence of the cloud and connectivity, creating seamless, secure, context-aware experiences for a connected world.}}
 \medskip
 
@@ -180,7 +187,7 @@ As a software engineer, worked on the design and development of embedded softwar
 \emph{Achievements}\\
 Delivered important features for the firmware - UI/control panel, including escalations from major HP customers.
 
-\subsection*{Actia do Brasil | {\footnotesize{porto alegre, rs, brazil}}}
+\subsection{Actia do Brasil | {\footnotesize{porto alegre, rs, brazil}}}
 {\footnotesize\textit{ACTIA Group is a major player in two principal areas of expertise: electronic diagnostics and garage equipment for repairing and testing vehicles, and on-board systems for commercial, industrial, agricultural and military vehicles. ACTIA's expertise spans from designing products to supporting and servicing them in the field. Innovation is backed by 15\% of the turnover invested in Research \& Development, and by the performance of almost 400 engineers in design centres of excellence throughout the world.}}
 \medskip
 
@@ -205,7 +212,7 @@ As a software engineer, worked on the development team of several projects of th
 \emph{Achievements}\\
 Delivered several updates for Fiat's diagnostic system to broaden the diagnostic coverage to new vehicle models. These updates were deployed to the entire dealer network of Fiat do Brasil.
 
-\subsection*{W3Haus | {\footnotesize{porto alegre, rs, brazil}}}
+\subsection{W3Haus | {\footnotesize{porto alegre, rs, brazil}}}
 {\footnotesize\textit{W3Haus is a communication agency that creates campaigns for brands using the most innovative and current digital mediums. Between its clients are Petrobras, Kraft Foods and VH1.}}
 \medskip
 
@@ -213,7 +220,7 @@ Delivered several updates for Fiat's diagnostic system to broaden the diagnostic
 Development of websites and intranet systems mainly using PHP/ASP/C\# and PostgreSQL/SQLServer.
 
 %\hrule
-\section*{Education}
+\section{Education}
 
 \years{2010 - \ldots}\textsc{M.Sc.} in Electrical Engineering at Pontifical Catholic University of Rio Grande do Sul - \textsc{pucrs}, Porto Alegre, \textsc{rs}, Brazil\\
 {\em{In Progress.}}\\
@@ -221,7 +228,7 @@ Development of websites and intranet systems mainly using PHP/ASP/C\# and Postgr
 \years{1999 - 2004}\textsc{B.Sc.} in Computer Engineering at Federal University of Rio Grande do Sul - \textsc{ufrgs}, Porto Alegre, \textsc{rs}, Brazil
 
 %\hrule
-\section*{Languages}
+\section{Languages}
 
 \begin{itemize}
   \item Portuguese (Native language)
@@ -230,7 +237,7 @@ Development of websites and intranet systems mainly using PHP/ASP/C\# and Postgr
 \end{itemize}
 
 %\hrule
-\section*{References}
+\section{References}
 
 Available upon request.
 
